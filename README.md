@@ -24,6 +24,8 @@ Simulates a 1 or 2 level cache, and returns the number of times a cache hit or m
   
 ## Two Level Cache:
     
+    The two caches have a write-through relationship, so things that exist in L1 do not exist in L2 and vice versa.
+    
    ### Input: 
   L1 cache size, L1 associativity, L1 cache ejection policy, L1 block size, L2 cache size, L2 associativity, L2 cache ejection policy, trace file
   
@@ -35,7 +37,8 @@ Simulates a 1 or 2 level cache, and returns the number of times a cache hit or m
      Number of times the accessed address was cached in L2.
      Number of times the acceessed address was not cached in L2.
   
-## Validity Checks: The program will check for the following input errors, and will return and print "error".
+## Validity Checks: 
+   ### The program will check for the following input errors, and will return and print "error":
       - Incorrect number of inputs.
       - Cache Size is not a power of 2.
       - Cache Block Size is not a power of 2.
