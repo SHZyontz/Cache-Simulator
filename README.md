@@ -1,9 +1,11 @@
 # Cache-Simulator
 Simulates a 1 or 2 level cache, and returns the number of times a cache hit or miss occurred, and the number of times memory was written to or read from, given a trace file input.
 
-One Level Cache:
+## One Level Cache:
 
-  Input: <cache size> <associativity> <cache ejection policy> <cache block size> <trace file>
+ ### Input: 
+   cache size, associativity, cache ejection policy, cache block size, trace file
+    
     where:
      Cache Size is in bytes, and is a power of 2.
      Associativity is either "direct", "assoc", or "assoc:n", where n is a power of 2. (assoc referring to fully associative, and assoc:n referring to n-asocciative.
@@ -14,25 +16,26 @@ One Level Cache:
                   W 0x9cb62d0
                   R 0x9cb62d4
   
-  Output: 
+ ### Output: 
     Number of times memory had to be read from.
     Number of times memory had to be written to.
     Number of times the accessed address was cached.
     Number of times the acceessed address was not cached.
   
-Two Level Cache:
+## Two Level Cache:
     
-    Input: <L1 cache size> <L1 associativity> <L1 cache ejection policy> <L1 block size> <L2 cache size> <L2 associativity> <L2 cache ejection policy> <trace file>
+   ### Input: 
+  L1 cache size, L1 associativity, L1 cache ejection policy, L1 block size, L2 cache size, L2 associativity, L2 cache ejection policy, trace file
   
-    Output: 
-       Number of times memory had to be read from.
-       Number of times memory had to be written to.
-       Number of times the accessed address was cached in L1.
-       Number of times the acceessed address was not cached in L1.
-       Number of times the accessed address was cached in L2.
-       Number of times the acceessed address was not cached in L2.
+   ### Output: 
+     Number of times memory had to be read from.
+     Number of times memory had to be written to.
+     Number of times the accessed address was cached in L1.
+     Number of times the acceessed address was not cached in L1.
+     Number of times the accessed address was cached in L2.
+     Number of times the acceessed address was not cached in L2.
   
-Validity Checks: The program will check for the following input errors, and will return and print "error".
+## Validity Checks: The program will check for the following input errors, and will return and print "error".
       - Incorrect number of inputs.
       - Cache Size is not a power of 2.
       - Cache Block Size is not a power of 2.
